@@ -12,6 +12,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 const isPalindrome = require('./solution');
+const palindrome = require('./solution');
 
 app.use(express.static(__dirname))
 
@@ -22,3 +23,16 @@ app.post('/palindromechecker',(req, res) => {
 })
 
 module.exports = app;
+
+function isPalindrome(str){
+  let newStr=""
+  str.lowerCase();
+  for(let i = str.length()-1 ; i >= 0 ; i++){
+    newStr+=str.charAt(i);
+  }
+  if(str===newStr){
+    return "palindrome";
+  }else{
+    return "notPalindrome";
+  }
+}

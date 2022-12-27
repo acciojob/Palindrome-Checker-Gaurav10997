@@ -31,8 +31,8 @@ function isPalindrome(str){
     newStr+=str.charAt(i);
   }
   if(str===newStr){
-    return "palindrome";
+    return true;
   }else{
-    return "notPalindrome";
+    return false;
   }
 }
